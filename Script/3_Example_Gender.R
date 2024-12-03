@@ -138,6 +138,7 @@ barplot(sapply(crop_consume_gender[,1], nan0), horiz=TRUE, xaxt="n",
         names.arg=gsub("_", " ", row.names(crop_consume_gender)), las=1)
 barplot(sapply(crop_consume_gender[,1], nan100)-100, horiz=TRUE, 
         add=TRUE, xaxt="n", col="#D55E00", names.arg=NA)
+abline(v=c(-50,50), lty=3, col="grey", lwd=0.7)
 mtext("Crop consumption", side = 3, line = 0.5)
 mtext("East Africa", side = 2, line = 6)
 axis(side = 1, at=seq(-100, 100, 50), labels = abs(seq(-100, 100, 50)))
@@ -150,6 +151,7 @@ barplot(sapply(crop_income_gender[,1], nan0), horiz=TRUE, xaxt="n",
         names.arg=gsub("_", " ", row.names(crop_income_gender)), las=1)
 barplot(sapply(crop_income_gender[,1], nan0)-100, horiz=TRUE, 
         add=TRUE, col="#D55E00", xaxt="n", names.arg=NA)
+abline(v=c(-50,50), lty=3, col="grey", lwd=0.7)
 mtext("Crop income", side = 3, line = 0.5)
 axis(side = 1, at=seq(-100, 100, 50), labels = abs(seq(-100, 100, 50)))
 mtext("Male", side = 1, line = 2, adj=0.22, cex = 0.7)
@@ -161,6 +163,7 @@ barplot(sapply(crop_consume_gender[,3], nan0), horiz=TRUE, xaxt="n",
         names.arg=gsub("_", " ", row.names(crop_consume_gender)), las=1)
 barplot(sapply(crop_consume_gender[,3], nan100)-100, horiz=TRUE, 
         add=TRUE, col="#D55E00", xaxt="n", names.arg=NA)
+abline(v=c(-50,50), lty=3, col="grey", lwd=0.7)
 mtext("West Africa", side = 2, line = 6)
 axis(side = 1, at=seq(-100, 100, 50), labels = abs(seq(-100, 100, 50)))
 mtext("Male", side = 1, line = 2, adj=0.22, cex = 0.7)
@@ -172,6 +175,7 @@ barplot(sapply(crop_income_gender[,3], nan0), horiz=TRUE, xaxt="n",
         names.arg=gsub("_", " ", row.names(crop_income_gender)), las=1)
 barplot(sapply(crop_income_gender[,3], nan100)-100, horiz=TRUE, 
         add=TRUE, col="#D55E00", xaxt="n", names.arg=NA)
+abline(v=c(-50,50), lty=3, col="grey", lwd=0.7)
 axis(side = 1, at=seq(-100, 100, 50), labels = abs(seq(-100, 100, 50)))
 mtext("Male", side = 1, line = 2, adj=0.22, cex = 0.7)
 mtext("Female", side = 1, line = 2, adj=0.8, cex=0.7)
@@ -182,6 +186,7 @@ barplot(sapply(crop_consume_gender[,2], nan0), horiz=TRUE, xaxt="n",
         names.arg=gsub("_", " ", row.names(crop_consume_gender)), las=1)
 barplot(sapply(crop_consume_gender[,2], nan100)-100, horiz=TRUE, 
         add=TRUE, col="#D55E00", xaxt="n", names.arg=NA)
+abline(v=c(-50,50), lty=3, col="grey", lwd=0.7)
 mtext("South + SE Asia", side = 2, line = 6)
 axis(side = 1, at=seq(-100, 100, 50), labels = abs(seq(-100, 100, 50)))
 mtext("Male", side = 1, line = 2, adj=0.22, cex = 0.7)
@@ -194,6 +199,7 @@ barplot(sapply(crop_income_gender[,2], nan0), horiz=TRUE, xaxt="n",
         names.arg=gsub("_", " ", row.names(crop_income_gender)), las=1)
 barplot(sapply(crop_income_gender[,2], nan100)-100, horiz=TRUE, 
         add=TRUE, col="#D55E00", xaxt="n", names.arg=NA)
+abline(v=c(-50,50), lty=3, col="grey", lwd=0.7)
 axis(side = 1, at=seq(-100, 100, 50), labels = abs(seq(-100, 100, 50)))
 mtext("Male", side = 1, line = 2, adj=0.22, cex = 0.7)
 mtext("Female", side = 1, line = 2, adj=0.8, cex=0.7)
@@ -278,6 +284,7 @@ barplot(as.numeric(consume_gender[1,]), horiz=TRUE, xaxt="n",
         names.arg=gsub("_", " ", names(consume_gender)), las=1)
 barplot(as.numeric(consume_gender[1,])-100, horiz=TRUE, add=TRUE, 
         col="#D55E00", , xaxt="n")
+abline(v=c(-50,50), lty=3, col="grey", lwd=0.7)
 mtext("Livestock consumption", side = 3, line = 0.5)
 mtext("East Africa", side = 2, line = 6)
 axis(side = 1, at=seq(-100, 100, 50), labels = abs(seq(-100, 100, 50)))
@@ -290,6 +297,7 @@ barplot(as.numeric(income_gender[1,]), horiz=TRUE, xaxt="n",
         names.arg=gsub("_", " ", names(income_gender)), las=1)
 barplot(as.numeric(income_gender[1,])-100, horiz=TRUE, 
         add=TRUE, col="#D55E00", xaxt="n")
+abline(v=c(-50,50), lty=3, col="grey", lwd=0.7)
 mtext("Livestock income", side = 3, line = 0.5)
 axis(side = 1, at=seq(-100, 100, 50), labels = abs(seq(-100, 100, 50)))
 mtext("Male", side = 1, line = 2, adj=0.22, cex = 0.7)
@@ -301,6 +309,7 @@ barplot(as.numeric(consume_gender[3,]), horiz=TRUE, xaxt="n",
         names.arg=gsub("_", " ", names(consume_gender)), las=1)
 barplot(as.numeric(consume_gender[3,])-100, horiz=TRUE, 
         add=TRUE, col="#D55E00", xaxt="n")
+abline(v=c(-50,50), lty=3, col="grey", lwd=0.7)
 mtext("West Africa", side = 2, line = 6)
 axis(side = 1, at=seq(-100, 100, 50), labels = abs(seq(-100, 100, 50)))
 mtext("Male", side = 1, line = 2, adj=0.22, cex = 0.7)
@@ -312,6 +321,7 @@ barplot(as.numeric(income_gender[3,]), horiz=TRUE, xaxt="n",
         names.arg=gsub("_", " ", names(income_gender)), las=1)
 barplot(as.numeric(income_gender[3,])-100, horiz=TRUE, 
         add=TRUE, col="#D55E00", xaxt="n")
+abline(v=c(-50,50), lty=3, col="grey", lwd=0.7)
 axis(side = 1, at=seq(-100, 100, 50), labels = abs(seq(-100, 100, 50)))
 mtext("Male", side = 1, line = 2, adj=0.22, cex = 0.7)
 mtext("Female", side = 1, line = 2, adj=0.8, cex=0.7)
@@ -323,6 +333,7 @@ barplot(sapply(consume_gender[2,], nan0), horiz=TRUE, xaxt="n",
         names.arg=gsub("_", " ", names(consume_gender)), las=1)
 barplot(sapply(consume_gender[2,], nan100)-100, horiz=TRUE, 
         add=TRUE, col="#D55E00", xaxt="n", names=NA)
+abline(v=c(-50,50), lty=3, col="grey", lwd=0.7)
 mtext("South + SE Asia", side = 2, line = 6)
 axis(side = 1, at=seq(-100, 100, 50), labels = abs(seq(-100, 100, 50)))
 mtext("Male", side = 1, line = 2, adj=0.22, cex = 0.7)
@@ -334,6 +345,7 @@ barplot(as.numeric(income_gender[2,]), horiz=TRUE, xaxt="n",
         names.arg=gsub("_", " ", names(income_gender)), las=1)
 barplot(as.numeric(income_gender[2,])-100, horiz=TRUE, 
         add=TRUE, col="#D55E00", xaxt="n")
+abline(v=c(-50,50), lty=3, col="grey", lwd=0.7)
 axis(side = 1, at=seq(-100, 100, 50), labels = abs(seq(-100, 100, 50)))
 mtext("Male", side = 1, line = 2, adj=0.22, cex = 0.7)
 mtext("Female", side = 1, line = 2, adj=0.8, cex=0.7)

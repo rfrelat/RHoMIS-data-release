@@ -42,13 +42,13 @@ abc_label <- function(text, cex=NULL, xplus=0, ...) {
 }
 
 # Load RHoMIS dataset
-rhomis <- readRDS("Data/HHDB_RHOMIS_29112024.rds")
+rhomis <- readRDS("Data/HHDB_RHOMIS_02122024.rds")
 
 # Load crop group information
 groupcrop <- read.csv("Data/crop_param.csv")
 
 # Load farming system map
-fs <- rast("../Data/GIS/cell5m_Agroecology_FarmingSystems_FS_2012_TX.tif")
+fs <- rast("Data/GIS/cell5m_Agroecology_FarmingSystems_FS_2012_TX.tif")
 activeCat(fs) <- 2 #to get the full name of AGROECOLOG
 
 # resolution of the figure
@@ -205,9 +205,11 @@ colnames(prodgroup) <- gsub("^ ", "", substr(gsub("_", " ", colnames(prodgroup))
 farmdiv <- apply(prodgroup>0,2,as.numeric)
 # keep only the 10 first food group
 farmdiv <- farmdiv[,1:10]
+# rename pulses by legumes
+colnames(farmdiv) <- gsub("Pulses", "Legumes", colnames(farmdiv))
 
 #get the column starting with "HDDS"
-HDDS_col <- names(db$hhinfo)[grep("^HDDS_G", names(db$hhinfo), ignore.case = TRUE)]
+HDDS_col <- names(db$hhinfo)[grep("^HDDS_G", names(db$hhinfo))]
 dietdiv <- db$hhinfo[,HDDS_col]
 
 
@@ -223,6 +225,7 @@ ncat <- rowsum(dietdiv, db$hhinfo$farming_system, na.rm = TRUE)
 # farm diversity per farming system (2B)
 ncat2 <- rowsum(farmdiv, db$hhinfo$farming_system, na.rm = TRUE)
 
+apply(t(ncat/as.numeric(nf)), 1, sd)
 png("Figures/Fig2_scoresH.png", width=6*ppi, height = 4*ppi, res=ppi)
 par(mfrow=c(1,2),mar=c(4,0.5,1,1), oma=c(0,9,0,7), cex=0.7)
 
