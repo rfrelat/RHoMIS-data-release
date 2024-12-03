@@ -1,4 +1,4 @@
-# Script to perform the analysis presented as example 1
+# Script to perform the analysis presented as example 2
 # Gender control over agricultural production and income
 # Last update: 02/12/2024
 
