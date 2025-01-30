@@ -413,11 +413,6 @@ fies <- apply(fies=="y",2,as.numeric)
 colnames(fies) <- fies_lab
 # table(rowSums(fies),ind$fies_score)
 
-# correct country name
-tab$country <- gsub("^bi$", "burundi", tab$country)
-tab$country <- gsub("burkina$", "burkina_faso", tab$country)
-tab$country <- gsub("country_name", "mali", tab$country)
-
 colH <- c("hhid", "id_form", "year", "country",
           "region", "sublocation")
 hhinfo <- data.frame(

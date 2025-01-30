@@ -233,7 +233,7 @@ barx <- barplot(t(ncat/as.numeric(nf)), col=palFG, las=1, horiz=TRUE,
                 xlab="mean HDDS")
 abc_label("A", cex=1.4, xplus = 4)
 barx <- barplot(t(ncat2/as.numeric(nf)), col=palFG, las=1, horiz=TRUE,
-                xlab="mean Farm food group diversity", names=rep("", 8))
+                xlab="mean food groups produced on-farm", names=rep("", 8), xpd=NA)
 abc_label("B", cex=1.4, xplus = 0.1)
 legend(4,5, legend = rev(colnames(farmdiv)), 
        fill = rev(palFG), xpd=NA, bty="n")
@@ -325,9 +325,10 @@ palFS <- c("#5c8a46", "#93af3c",
            "#a89bca", "#7861aa", "#b8d433",
            "#cf962b", "#fcac1b", "#e9c4dd")
 
+pchFS <- rep(c(15:18),2)
 
 png("Figures/Fig3_randomforest_mse.png", width=7*ppi, height = 6*ppi, res=ppi)
-par(mar=c(4,8,1,1),yaxs="i")
+par(mar=c(4,8,1,1),yaxs="i", cex=1.2)
 plot(pimp[ord,1], 1:nrow(pimp)+yseq[1], xlim=c(0,1), 
      ylim=c(0.5, nrow(pimp)+0.5), xlab="Variable importance (MSE)",
      yaxt="n", ylab="", pch=16, col=palFS[1])
@@ -336,10 +337,11 @@ rect(-0.1, 1:nrow(pimp)-0.5, 1.1, 1:nrow(pimp)+0.5, border = NA,
 abline(h=c(1:nrow(pimp)), lty=2)
 box()
 for (j in 1:ncol(pimp)){
-  points(ifelse(pimp[ord,j]<0, 0, pimp[ord,j]), 1:nrow(pimp)+yseq[j], pch=16,
-         col=palFS[j], xpd=NA)
+  points(ifelse(pimp[ord,j]<0, 0, pimp[ord,j]), 1:nrow(pimp)+yseq[j], 
+         pch=pchFS[j], col=palFS[j], xpd=NA, cex=rep(c(rep(1.2,3),1.4),2))
 }
 axis(2, at=1:nrow(pimp), labels = newlab[ord], las=2)
-legend("bottomright", legend = rev(sort(unique(db$hhinfo$farming_system))), pch=16,
-       col = rev(palFS), xpd=NA, cex=0.8, title="Farming system")
+legend("bottomright", legend = rev(sort(unique(db$hhinfo$farming_system))), pch=rev(pchFS),
+       col = rev(palFS), xpd=NA, cex=0.8, pt.cex=rep(c(rep(1.2,3),1.4),2),
+       title="Farming system")
 dev.off()
